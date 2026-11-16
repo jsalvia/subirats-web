@@ -381,3 +381,193 @@ a { color: inherit; }
   .xarxes { margin-top: 20px; }
   .baixa { display: none; }
 }
+
+/* ------------------------------------------------- CAPÇALERA I NAVEGACIÓ --- */
+
+.site-cap {
+  background: var(--verd);
+  position: sticky;
+  top: 0;
+  z-index: 50;
+}
+
+.site-cap__inner {
+  max-width: 1080px;
+  margin: 0 auto;
+  padding: 14px var(--marge);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+}
+
+.site-cap__marca { display: block; line-height: 0; }
+
+.site-cap__marca img { width: 132px; height: auto; }
+
+.nav {
+  display: flex;
+  align-items: center;
+  gap: clamp(14px, 3vw, 30px);
+  margin-left: auto;
+}
+
+.nav a {
+  color: #fff;
+  text-decoration: none;
+  font-size: .76rem;
+  font-weight: 600;
+  letter-spacing: .13em;
+  text-transform: uppercase;
+  padding: 6px 0;
+  border-bottom: 2px solid transparent;
+  transition: border-color 160ms ease, opacity 160ms ease;
+}
+
+.nav a:hover { opacity: .8; }
+
+.nav a[aria-current="page"] { border-bottom-color: #fff; }
+
+/* A la portada el capçal va sobre el verd i no repeteix el logotip */
+.inici .site-cap {
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 0;
+  background: transparent;
+  z-index: 20;
+}
+
+.inici .site-cap__marca { display: none; }
+
+.inici .hero { padding-top: clamp(86px, 12vh, 108px); }
+
+/* ------------------------------------------------------ PÀGINES INTERNES --- */
+
+.pagina {
+  max-width: 40rem;
+  margin: 0 auto;
+  padding: clamp(44px, 7vw, 88px) var(--marge) clamp(56px, 8vw, 100px);
+}
+
+.pagina__titol {
+  margin: 0 0 clamp(20px, 3vw, 30px);
+  font-size: clamp(1.85rem, 5vw, 2.9rem);
+  font-weight: 800;
+  line-height: 1.07;
+  letter-spacing: -.025em;
+  text-wrap: balance;
+}
+
+.prosa p {
+  font-family: var(--serif);
+  font-size: clamp(1.06rem, 1.6vw, 1.18rem);
+  line-height: 1.72;
+  margin: 0 0 1.1em;
+  hyphens: auto;
+}
+
+.pagina__peu {
+  margin-top: 2.2rem;
+  font-size: .95rem;
+  color: var(--gris);
+}
+
+.pagina__peu a { color: var(--verd); }
+
+.fitxa {
+  margin: clamp(28px, 4vw, 44px) 0 0;
+  padding: clamp(20px, 3vw, 28px);
+  background: #f3fbf6;
+  border-left: 4px solid var(--verd);
+}
+
+.fitxa__titol {
+  margin: 0 0 .5rem;
+  font-size: 1.15rem;
+  letter-spacing: -.01em;
+}
+
+.fitxa__text {
+  margin: 0;
+  font-family: var(--serif);
+  line-height: 1.65;
+}
+
+.contacte {
+  display: grid;
+  gap: 14px;
+  margin: clamp(24px, 4vw, 36px) 0 0;
+}
+
+.contacte__bloc {
+  border: 1px solid #e3ebe6;
+  border-radius: 4px;
+  padding: 18px 20px;
+  transition: border-color 180ms ease;
+}
+
+.contacte__bloc:hover { border-color: #bcdccb; }
+
+.contacte__etiqueta {
+  margin: 0;
+  font-size: .72rem;
+  letter-spacing: .16em;
+  text-transform: uppercase;
+  color: var(--verd);
+  font-weight: 700;
+}
+
+.contacte__dada {
+  margin: 6px 0 0;
+  font-size: 1.05rem;
+  font-weight: 600;
+}
+
+.contacte__dada a {
+  color: var(--tinta);
+  text-decoration: none;
+  border-bottom: 1px solid #cfe3d7;
+}
+
+.contacte__dada a:hover { color: var(--verd); border-color: var(--verd); }
+
+.contacte__dada--pendent { color: var(--gris); font-weight: 500; }
+
+.contacte__nota {
+  margin: 6px 0 0;
+  font-size: .85rem;
+  color: var(--gris);
+}
+
+.buit {
+  margin-top: 2rem;
+  padding-top: 22px;
+  border-top: 1px solid #e8ede9;
+}
+
+.buit p { margin: 0 0 .4rem; color: var(--gris); }
+
+.buit__petit { font-size: .9rem; }
+
+.buit a { color: var(--verd); }
+
+.entrada { margin: 0 0 2rem; }
+
+.entrada__data {
+  margin: 0 0 .3rem;
+  font-size: .74rem;
+  letter-spacing: .16em;
+  text-transform: uppercase;
+  color: var(--verd);
+  font-weight: 700;
+}
+
+.entrada__titol { margin: 0 0 .5rem; font-size: 1.35rem; }
+
+@media (max-width: 520px) {
+  .site-cap__inner { padding: 12px 16px; gap: 10px; }
+  .site-cap__marca img { width: 96px; }
+  .nav { gap: 12px; }
+  .nav a { font-size: .68rem; letter-spacing: .10em; }
+}
