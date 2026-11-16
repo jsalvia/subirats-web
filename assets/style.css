@@ -1143,3 +1143,35 @@ a { color: inherit; }
   .pagina { padding-top: clamp(30px, 7vw, 46px); }
   .pagina__titol { margin-bottom: 18px; }
 }
+
+/* ------------------------------------------------------- TORNA A DALT --- */
+.torna-dalt {
+  margin: clamp(30px, 5vw, 48px) 0 0;
+  text-align: center;
+}
+
+.torna-dalt__boto {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  font-size: .82rem;
+  font-weight: 600;
+  letter-spacing: .06em;
+  color: var(--verd);
+  text-decoration: none;
+  border: 1px solid #cfe3d7;
+  border-radius: 999px;
+  padding: 11px 20px;
+  transition: background 160ms ease, border-color 160ms ease, color 160ms ease;
+}
+
+.torna-dalt__boto:hover {
+  background: var(--verd);
+  border-color: var(--verd);
+  color: #fff;
+}
+
+.torna-dalt__boto:focus-visible {
+  outline: 3px solid rgba(15,158,85,.35);
+  outline-offset: 2px;
+}
