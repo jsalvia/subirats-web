@@ -1099,8 +1099,8 @@ a { color: inherit; }
 .menu-boto { display: none; }
 
 @media (max-width: 680px) {
-  /* el menú desplegat només existeix a les pàgines interiors */
-  body.interior .menu-boto {
+  /* el botó es mostra a qualsevol pàgina que el porti al codi */
+  .menu-boto {
     display: inline-flex;
     flex-direction: column;
     justify-content: center;
@@ -1116,7 +1116,7 @@ a { color: inherit; }
     cursor: pointer;
   }
 
-  body.interior .menu-boto__barra {
+  .menu-boto__barra {
     display: block;
     width: 20px;
     height: 2px;
@@ -1125,11 +1125,12 @@ a { color: inherit; }
     transition: transform .22s ease, opacity .18s ease;
   }
 
-  body.interior .site-cap--obert .menu-boto__barra:nth-child(1) { transform: translateY(7px) rotate(45deg); }
-  body.interior .site-cap--obert .menu-boto__barra:nth-child(2) { opacity: 0; }
-  body.interior .site-cap--obert .menu-boto__barra:nth-child(3) { transform: translateY(-7px) rotate(-45deg); }
+  .site-cap--obert .menu-boto__barra:nth-child(1) { transform: translateY(7px) rotate(45deg); }
+  .site-cap--obert .menu-boto__barra:nth-child(2) { opacity: 0; }
+  .site-cap--obert .menu-boto__barra:nth-child(3) { transform: translateY(-7px) rotate(-45deg); }
 
-  body.interior .nav {
+  /* només s'amaga el menú allà on hi ha hamburguesa (la portada no en té) */
+  .site-cap:has(.menu-boto) .nav {
     position: absolute;
     top: 100%;
     left: 0;
@@ -1144,18 +1145,17 @@ a { color: inherit; }
     box-shadow: 0 12px 24px rgba(0,0,0,.18);
   }
 
-  body.interior .site-cap--obert .nav { display: flex; }
+  .site-cap:has(.menu-boto).site-cap--obert .nav { display: flex; }
 
-  body.interior .nav a {
+  .site-cap:has(.menu-boto) .nav a {
     padding: 14px 0;
     font-size: .82rem;
     letter-spacing: .12em;
     border-bottom: 1px solid rgba(255,255,255,.16);
   }
 
-  body.interior .nav a:last-child { border-bottom: 0; }
+  .site-cap:has(.menu-boto) .nav a:last-child { border-bottom: 0; }
 
-  /* una mica més d'aire dins de les pàgines al mòbil */
-  body.interior .pagina { padding-top: clamp(30px, 7vw, 46px); }
-  body.interior .pagina__titol { margin-bottom: 18px; }
+  .pagina { padding-top: clamp(30px, 7vw, 46px); }
+  .pagina__titol { margin-bottom: 18px; }
 }
