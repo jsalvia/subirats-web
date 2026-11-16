@@ -7,7 +7,7 @@
 <meta name="description" content="Contacta amb Subirats, endavant!: WhatsApp, Instagram i correu.">
 <meta name="robots" content="noindex,nofollow">
 <meta name="theme-color" content="#0F9E55">
-<link rel="stylesheet" href="assets/style.css?v=18">
+<link rel="stylesheet" href="assets/style.css?v=19">
 </head>
 <body>
 
@@ -30,41 +30,9 @@
 
   <div class="prosa">
     <p>
-      Vols fer-nos arribar una proposta, una preocupació del teu barri o sumar-te a
-      la candidatura? Escriu-nos amb el formulari o pel canal que et vagi millor: et
-      responem.
+      Una proposta, una preocupació del teu barri, ganes de sumar-te a la
+      candidatura. Escriu-nos: et responem.
     </p>
-  </div>
-
-  <!-- ============================================================
-       PENDENT: afegir l'adreça de correu quan estigui creada.
-       Substituir el bloc .contacte__correu per:
-       <p class="contacte__etiqueta">Correu</p>
-       <p class="contacte__dada"><a href="mailto:ADREÇA">ADREÇA</a></p>
-       ============================================================ -->
-
-  <div class="contacte">
-    <div class="contacte__bloc">
-      <p class="contacte__etiqueta">WhatsApp</p>
-      <p class="contacte__dada">
-        <a href="https://chat.whatsapp.com/DFD99c0NbTZ797JmKTcSfr" target="_blank" rel="noopener noreferrer">Grup de Subirats, endavant!</a>
-      </p>
-      <p class="contacte__nota">Per a conversa oberta entre simpatitzants.</p>
-    </div>
-
-    <div class="contacte__bloc">
-      <p class="contacte__etiqueta">Instagram</p>
-      <p class="contacte__dada">
-        <a href="https://www.instagram.com/aps_cup/" target="_blank" rel="noopener noreferrer">@aps_cup</a>
-      </p>
-      <p class="contacte__nota">Missatge directe obert.</p>
-    </div>
-
-    <div class="contacte__bloc">
-      <p class="contacte__etiqueta">Correu</p>
-      <p class="contacte__dada contacte__dada--pendent">Pendent de confirmar</p>
-      <p class="contacte__nota">Aquí hi anirà l’adreça de contacte oficial.</p>
-    </div>
   </div>
 
   <form class="formulari" id="contacte" novalidate>
@@ -112,6 +80,35 @@
       <span class="formulari__nota" id="contacte-nota" role="status"></span>
     </p>
   </form>
+
+  <p class="contacte__separa">O si ho prefereixes, per aquí</p>
+
+  <div class="contacte">
+    <a class="contacte__bloc" href="https://chat.whatsapp.com/DFD99c0NbTZ797JmKTcSfr" target="_blank" rel="noopener noreferrer">
+      <svg class="contacte__icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+        <path d="M20.5 11.6a8.5 8.5 0 0 1-12.7 7.5L3.5 20.5l1.5-4.2a8.5 8.5 0 1 1 15.5-4.7Z"/>
+        <path d="M9 8.4c.3-.7 1-.6 1.3-.1l.7 1.3c.2.4 0 .8-.3 1l-.4.3c.3.9 1.3 1.9 2.2 2.2l.3-.4c.2-.3.6-.4 1-.3l1.3.7c.5.3.6 1 0 1.3-1.6.8-3.4 0-4.9-1.5-1.5-1.5-2.3-3.3-1.5-4.9Z"/>
+      </svg>
+      <span class="contacte__text">
+        <span class="contacte__etiqueta">WhatsApp</span>
+        <span class="contacte__dada">Grup de Subirats, endavant!</span>
+        <span class="contacte__nota">Conversa oberta entre simpatitzants.</span>
+      </span>
+    </a>
+
+    <a class="contacte__bloc" href="https://www.instagram.com/aps_cup/" target="_blank" rel="noopener noreferrer">
+      <svg class="contacte__icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+        <rect x="3.5" y="3.5" width="17" height="17" rx="5"/>
+        <circle cx="12" cy="12" r="4"/>
+        <circle cx="17" cy="7" r="1" fill="currentColor" stroke="none"/>
+      </svg>
+      <span class="contacte__text">
+        <span class="contacte__etiqueta">Instagram</span>
+        <span class="contacte__dada">@aps_cup</span>
+        <span class="contacte__nota">Missatge directe obert.</span>
+      </span>
+    </a>
+  </div>
 
   <p class="pagina__peu">
     També ens pots trobar als actes del municipi. <a href="actualitat.html">Mira l’agenda</a>.
