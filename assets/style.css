@@ -1092,3 +1092,69 @@ a { color: inherit; }
   .acte { gap: 14px; padding: 16px; }
   .acte__dia { font-size: 1.45rem; }
 }
+
+/* ============================================== MENÚ MÒBIL (HAMBURGUESA) = */
+.site-cap__inner { position: relative; }
+
+.menu-boto { display: none; }
+
+@media (max-width: 680px) {
+  .menu-boto {
+    display: inline-flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 5px;
+    width: 44px;
+    height: 44px;
+    padding: 0 11px;
+    margin-left: auto;
+    border: 1px solid rgba(255,255,255,.4);
+    border-radius: 3px;
+    background: transparent;
+    color: #fff;
+    cursor: pointer;
+  }
+
+  .menu-boto__barra {
+    display: block;
+    width: 20px;
+    height: 2px;
+    background: currentColor;
+    border-radius: 2px;
+    transition: transform .22s ease, opacity .18s ease;
+  }
+
+  .site-cap--obert .menu-boto__barra:nth-child(1) { transform: translateY(7px) rotate(45deg); }
+  .site-cap--obert .menu-boto__barra:nth-child(2) { opacity: 0; }
+  .site-cap--obert .menu-boto__barra:nth-child(3) { transform: translateY(-7px) rotate(-45deg); }
+
+  .nav {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    right: 0;
+    display: none;
+    flex-direction: column;
+    align-items: stretch;
+    gap: 0;
+    margin: 0;
+    padding: 4px var(--marge) 10px;
+    background: var(--verd-fosc);
+    box-shadow: 0 12px 24px rgba(0,0,0,.18);
+  }
+
+  .site-cap--obert .nav { display: flex; }
+
+  .nav a {
+    padding: 14px 0;
+    font-size: .82rem;
+    letter-spacing: .12em;
+    border-bottom: 1px solid rgba(255,255,255,.16);
+  }
+
+  .nav a:last-child { border-bottom: 0; }
+
+  /* una mica més d'aire dins de les pàgines al mòbil */
+  .pagina { padding-top: clamp(30px, 7vw, 46px); }
+  .pagina__titol { margin-bottom: 18px; }
+}

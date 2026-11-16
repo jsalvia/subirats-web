@@ -103,4 +103,36 @@
     });
   }
 
+
+  /* ------------------------------------------------------ MENÚ MÒBIL ---- */
+  var cap = document.querySelector(".site-cap");
+  var botoMenu = document.querySelector(".menu-boto");
+  var navMenu = document.getElementById("menu-principal");
+
+  if (cap && botoMenu && navMenu) {
+    function tancaMenu() {
+      cap.classList.remove("site-cap--obert");
+      botoMenu.setAttribute("aria-expanded", "false");
+      botoMenu.setAttribute("aria-label", "Obre el menú");
+    }
+
+    botoMenu.addEventListener("click", function () {
+      var obert = cap.classList.toggle("site-cap--obert");
+      botoMenu.setAttribute("aria-expanded", obert ? "true" : "false");
+      botoMenu.setAttribute("aria-label", obert ? "Tanca el menú" : "Obre el menú");
+    });
+
+    navMenu.addEventListener("click", function (e) {
+      if (e.target.closest("a")) tancaMenu();
+    });
+
+    document.addEventListener("keydown", function (e) {
+      if (e.key === "Escape") tancaMenu();
+    });
+
+    document.addEventListener("click", function (e) {
+      if (!cap.contains(e.target)) tancaMenu();
+    });
+  }
+
 })();
