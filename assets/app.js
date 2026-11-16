@@ -6,6 +6,21 @@
   var any = document.getElementById("any");
   if (any) any.textContent = new Date().getFullYear();
 
+  /* ------------------------------------------- SUBSCRIPCIÓ (Brevo) --- */
+  var BREVO = "https://30385a9b.sibforms.com/serve/MUIFAEVDAUOgVV3ba9c8hQhjW4dNiH_wTjUoQngdjCd1Rv_iG4fIFh4IzszPSlhBRrnkN5UdYpkxE7D-KBlqVx3j0zPjpCGFZo-9q_Yn-yHs5H__sCNccIirNdUJ4qyoSeyHwc_NB49mHJSTuxufT_9UtTaxKeY-o-W690jLCPbzVVB4xZBX8RDUgbcOU4voSR9ay8U17UnvRPW4sg==";
+
+  function subscriuBrevo(correu) {
+    var dades = "EMAIL=" + encodeURIComponent(correu) +
+                "&email_address_check=" +
+                "&locale=es";
+    return fetch(BREVO, {
+      method: "POST",
+      mode: "no-cors",
+      headers: { "Content-Type": "application/x-www-form-urlencoded" },
+      body: dades
+    });
+  }
+
   /* ---------------------------------------------------------- FORMULARI --- */
   var form = document.getElementById("subscriu");
   var nota = document.getElementById("nota");
@@ -31,18 +46,9 @@
         return;
       }
 
-      // Envia a Brevo sense sortir de la pàgina (mode no-cors: la resposta no es llegeix).
-      var dades = "EMAIL=" + encodeURIComponent(valor) +
-                  "&email_address_check=" +
-                  "&locale=es";
       avisa("Enviant…");
 
-      fetch(form.action, {
-        method: "POST",
-        mode: "no-cors",
-        headers: { "Content-Type": "application/x-www-form-urlencoded" },
-        body: dades
-      }).then(function () {
+      subscriuBrevo(valor).then(function () {
         form.reset();
         avisa("Gràcies! Ja ets a la llista. T'escriurem poc i només quan valgui la pena.");
       }).catch(function () {
@@ -122,7 +128,23 @@
       if (!missatge || !missatge.value.trim()) { diu("Escriu-nos el missatge.", false); marcaError(missatge && missatge.closest(".camp")); missatge.focus(); return; }
       if (rgpd && !rgpd.checked) { diu("Cal acceptar el tractament de les dades.", false); rgpd.focus(); return; }
 
-      diu("Gràcies, " + nom.value.trim().split(" ")[0] + ". T'hem llegit i et respondrem aviat.", true);
+      var butlleti = document.getElementById("newsletter");
+      var volButlleti = !!(butlleti && butlleti.checked);
+      var nomCurt = nom.value.trim().split(" ")[0];
+
+      if (volButlleti) {
+        diu("Enviant…", false);
+        subscriuBrevo(correu.value.trim()).then(function () {
+          diu("Gràcies, " + nomCurt + ". T'hem llegit, et respondrem aviat i t'hem apuntat al butlletí.", true);
+          contacte.reset();
+        }).catch(function () {
+          diu("Gràcies, " + nomCurt + ". T'hem llegit i et respondrem aviat. Pel butlletí, torna-ho a provar.", true);
+          contacte.reset();
+        });
+        return;
+      }
+
+      diu("Gràcies, " + nomCurt + ". T'hem llegit i et respondrem aviat.", true);
       contacte.reset();
     });
   }
