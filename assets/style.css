@@ -446,6 +446,63 @@ a { color: inherit; }
   text-wrap: balance;
 }
 
+/* --- Pàgina legal o de servei: no ha de semblar una notícia --- */
+.pagina--legal {
+  max-width: 36rem;
+  padding-top: clamp(30px, 4.5vw, 54px);
+  padding-bottom: clamp(44px, 6vw, 72px);
+}
+
+.pagina--legal .kicker {
+  margin-bottom: 10px;
+  font-size: .68rem;
+  letter-spacing: .18em;
+}
+
+.pagina--legal .pagina__titol {
+  margin-bottom: 18px;
+  font-family: var(--sans);
+  font-size: clamp(1.4rem, 3vw, 1.8rem);
+  font-weight: 700;
+  line-height: 1.2;
+  letter-spacing: -.01em;
+}
+
+.pagina--legal .prosa p,
+.pagina--legal .prosa ul,
+.pagina--legal .prosa ol {
+  font-family: var(--sans);
+  font-size: .95rem;
+  line-height: 1.68;
+  margin-bottom: .95em;
+}
+
+.pagina--legal .prosa li { margin-bottom: .3em; }
+
+.pagina--legal .prosa .entradeta {
+  font-family: var(--sans);
+  font-size: 1rem;
+  line-height: 1.6;
+  margin-bottom: 1.8em;
+  color: var(--gris);
+}
+
+.pagina--legal .prosa h2 {
+  margin: 1.9em 0 .4em;
+  font-family: var(--sans);
+  font-size: 1rem;
+  font-weight: 700;
+  letter-spacing: 0;
+}
+
+.pagina--legal .prosa h2:first-of-type { margin-top: 1.2em; }
+
+.pagina--legal .article__signatura {
+  margin-top: 2.2em;
+  font-size: .85rem;
+  color: var(--gris);
+}
+
 .prosa p {
   font-family: var(--serif);
   font-size: clamp(1.06rem, 1.6vw, 1.18rem);
