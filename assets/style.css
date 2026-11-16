@@ -1215,3 +1215,9 @@ a { color: inherit; }
   outline-offset: 4px;
   border-radius: 4px;
 }
+
+/* el sobre, en traç, ha de fer la mateixa alçada que les icones de marca */
+.xarxa-contacte--correu svg {
+  width: clamp(32px, 4vw, 38px);
+  height: auto;
+}
