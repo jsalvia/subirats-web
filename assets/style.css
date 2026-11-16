@@ -666,8 +666,8 @@ a { color: inherit; }
 
 .quadricula {
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 22px;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 26px;
   margin-top: 2.2rem;
 }
 
@@ -726,17 +726,7 @@ a { color: inherit; }
   color: var(--gris);
 }
 
-.targeta--buit {
-  border-style: dashed;
-  background: #fafcfb;
-  align-items: center;
-  justify-content: center;
-  text-align: center;
-  padding: 24px;
-  min-height: 240px;
-}
 
-.targeta--buit .targeta__data { color: var(--gris); }
 
 /* ------------------------------------------------------------ NOTÍCIA --- */
 
@@ -782,13 +772,8 @@ a { color: inherit; }
 
 .torna:hover { border-color: var(--verd); }
 
-@media (max-width: 900px) {
-  .quadricula { grid-template-columns: repeat(2, 1fr); }
-}
-
-@media (max-width: 560px) {
-  .quadricula { grid-template-columns: 1fr; gap: 16px; }
-  .targeta--buit { min-height: 150px; }
+@media (max-width: 680px) {
+  .quadricula { grid-template-columns: 1fr; gap: 18px; }
 }
 
 /* La pàgina de notícies respira més que la columna de lectura */
