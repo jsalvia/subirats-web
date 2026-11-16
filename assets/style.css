@@ -790,3 +790,15 @@ a { color: inherit; }
   .quadricula { grid-template-columns: 1fr; gap: 18px; }
 }
 
+
+.article__lead--segon {
+  font-size: clamp(1.02rem, 1.6vw, 1.14rem);
+  color: #35473d;
+  margin-top: -.7rem;
+}
+
+.article__signatura {
+  margin: 2.2rem 0 0;
+  font-size: .84rem;
+  color: var(--gris);
+}
