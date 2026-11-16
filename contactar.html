@@ -7,7 +7,7 @@
 <meta name="description" content="Contacta amb Subirats, endavant!: WhatsApp, Instagram i correu.">
 <meta name="robots" content="noindex,nofollow">
 <meta name="theme-color" content="#0F9E55">
-<link rel="stylesheet" href="assets/style.css?v=19">
+<link rel="stylesheet" href="assets/style.css?v=20">
 </head>
 <body>
 
@@ -40,34 +40,56 @@
          i treure el mode de prova de app.js. -->
     <div class="formulari__fila">
       <p class="camp">
-        <label for="nom">Nom</label>
+        <label for="nom">Nom <span class="camp__req">obligatori</span></label>
         <input type="text" id="nom" name="nom" autocomplete="name" required>
       </p>
       <p class="camp">
-        <label for="correu">Correu electrònic</label>
+        <label for="correu">Correu electrònic <span class="camp__req">obligatori</span></label>
         <input type="email" id="correu" name="correu" autocomplete="email" required>
       </p>
     </div>
 
+    <div class="formulari__fila">
+      <p class="camp">
+        <label for="telefon">Telèfon <span class="camp__opc">opcional</span></label>
+        <input type="tel" id="telefon" name="telefon" autocomplete="tel" inputmode="tel">
+      </p>
+      <p class="camp">
+        <label for="nucli">Poble o nucli <span class="camp__req">obligatori</span></label>
+        <select id="nucli" name="nucli" required>
+          <option value="">Tria’n un</option>
+        <option>Ca l’Avi</option>
+        <option>Can Bas</option>
+        <option>Can Batista</option>
+        <option>Can Cartró</option>
+        <option>Can Rossell</option>
+        <option>Cantallops</option>
+        <option>El Pago</option>
+        <option>El Rebato i Torre-Ramona</option>
+        <option>Els Casots – Can Panxa</option>
+        <option>Lavern</option>
+        <option>Ordal</option>
+        <option>Sant Pau d’Ordal – La Guàrdia</option>
+        <option>Urbanització Can Rossell</option>
+        <option>Urbanització Casablanca</option>
+        <option>Urbanització Muntanya Rodona</option>
+        </select>
+      </p>
+    </div>
+
     <p class="camp">
-      <label for="assumpte">Assumpte</label>
-      <select id="assumpte" name="assumpte">
-        <option>Una proposta</option>
-        <option>Un problema del barri</option>
-        <option>Vull sumar-me a la candidatura</option>
-        <option>Premsa</option>
-        <option>Altres</option>
-      </select>
+      <label for="assumpte">Assumpte <span class="camp__opc">opcional</span></label>
+      <input type="text" id="assumpte" name="assumpte">
     </p>
 
     <p class="camp">
-      <label for="missatge">Missatge</label>
+      <label for="missatge">Missatge <span class="camp__req">obligatori</span></label>
       <textarea id="missatge" name="missatge" rows="6" required></textarea>
     </p>
 
     <p class="camp camp--casella">
       <input type="checkbox" id="rgpd" name="rgpd" required>
-      <label for="rgpd">Accepto que es tractin les meves dades per respondre'm.</label>
+      <label for="rgpd">Accepto que es tractin les meves dades per respondre’m.</label>
     </p>
 
     <p class="hp">

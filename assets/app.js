@@ -78,6 +78,7 @@
       var nom = document.getElementById("nom");
       var correu = document.getElementById("correu");
       var missatge = document.getElementById("missatge");
+      var nucli = document.getElementById("nucli");
       var rgpd = document.getElementById("rgpd");
       var trampa = document.getElementById("web");
 
@@ -93,6 +94,7 @@
       if (!correu || !/^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/.test(correu.value.trim())) {
         diu("Revisa el correu.", false); correu.focus(); return;
       }
+      if (nucli && !nucli.value) { diu("Digues de quin poble o nucli ets.", false); nucli.focus(); return; }
       if (!missatge || !missatge.value.trim()) { diu("Escriu-nos el missatge.", false); missatge.focus(); return; }
       if (rgpd && !rgpd.checked) { diu("Cal acceptar el tractament de les dades.", false); rgpd.focus(); return; }
 
