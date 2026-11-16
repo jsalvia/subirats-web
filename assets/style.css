@@ -639,23 +639,20 @@ a { color: inherit; }
 
 /* ------------------------------------------------------------- FOTOGRAFIA --- */
 
-.foto {
-  max-width: 380px;
-  margin: 1.9rem auto 0;
-}
+.foto { margin: 1.9rem 0 0; }
 
 .foto img {
   display: block;
   width: 100%;
   height: auto;
   max-width: 100%;
-  aspect-ratio: 4 / 5;
+  aspect-ratio: 4 / 3;
   object-fit: cover;
-  object-position: 50% 45%;
+  object-position: 50% 50%;
   border-radius: 8px;
 }
 
-.foto--retrat img { object-position: 38% 50%; }
+.foto--retrat img { object-position: 40% 42%; }
 
 .foto--retrat figcaption {
   margin-top: .55rem;
