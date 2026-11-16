@@ -63,4 +63,42 @@
 
     io.observe(bloc);
   }
+
+  /* -------------------------------------------------------- CONTACTE ----- */
+  /* MODE DE PROVA: valida i mostra el missatge d'èxit, però no envia res.
+     Quan hi hagi endpoint, posar-lo a l'action del formulari, treure el
+     preventDefault i deixar que el navegador faci el POST. */
+  var contacte = document.getElementById("contacte");
+  var notaContacte = document.getElementById("contacte-nota");
+
+  if (contacte) {
+    contacte.addEventListener("submit", function (e) {
+      e.preventDefault();
+
+      var nom = document.getElementById("nom");
+      var correu = document.getElementById("correu");
+      var missatge = document.getElementById("missatge");
+      var rgpd = document.getElementById("rgpd");
+      var trampa = document.getElementById("web");
+
+      function diu(text, ok) {
+        if (!notaContacte) return;
+        notaContacte.textContent = text;
+        notaContacte.className = "formulari__nota" + (ok ? " formulari__nota--ok" : "");
+      }
+
+      if (trampa && trampa.value) { return; } /* bot: no diem res */
+
+      if (!nom || !nom.value.trim()) { diu("Falta el nom.", false); nom.focus(); return; }
+      if (!correu || !/^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/.test(correu.value.trim())) {
+        diu("Revisa el correu.", false); correu.focus(); return;
+      }
+      if (!missatge || !missatge.value.trim()) { diu("Escriu-nos el missatge.", false); missatge.focus(); return; }
+      if (rgpd && !rgpd.checked) { diu("Cal acceptar el tractament de les dades.", false); rgpd.focus(); return; }
+
+      diu("Gràcies, " + nom.value.trim().split(" ")[0] + ". T'hem llegit i et respondrem aviat.", true);
+      contacte.reset();
+    });
+  }
+
 })();

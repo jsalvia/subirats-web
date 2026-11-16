@@ -847,3 +847,107 @@ a { color: inherit; }
 
 /* Foto dins del cos que respecta la proporció original del fitxer */
 .foto--lliure img { aspect-ratio: auto; }
+
+/* ===================================================== FORMULARI CONTACTE = */
+.formulari {
+  margin: clamp(28px, 4.5vw, 42px) 0 0;
+  max-width: 640px;
+}
+
+.formulari__fila { display: grid; gap: 14px; }
+
+@media (min-width: 560px) {
+  .formulari__fila { grid-template-columns: 1fr 1fr; }
+}
+
+.camp { margin: 0 0 14px; }
+
+.camp label {
+  display: block;
+  font-size: .72rem;
+  letter-spacing: .16em;
+  text-transform: uppercase;
+  color: var(--verd);
+  font-weight: 700;
+  margin-bottom: 6px;
+}
+
+.camp input[type="text"],
+.camp input[type="email"],
+.camp select,
+.camp textarea {
+  width: 100%;
+  font: inherit;
+  font-size: 1rem;
+  color: var(--tinta);
+  background: var(--blanc);
+  border: 1px solid #e3ebe6;
+  border-radius: 4px;
+  padding: 12px 14px;
+  appearance: none;
+}
+
+.camp select {
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='8' viewBox='0 0 12 8'%3E%3Cpath d='M1 1l5 5 5-5' fill='none' stroke='%236b7a72' stroke-width='1.6' stroke-linecap='round'/%3E%3C/svg%3E");
+  background-repeat: no-repeat;
+  background-position: right 14px center;
+  padding-right: 40px;
+}
+
+.camp textarea { min-height: 140px; resize: vertical; }
+
+.camp input:focus,
+.camp select:focus,
+.camp textarea:focus {
+  outline: none;
+  border-color: var(--verd);
+  box-shadow: 0 0 0 3px rgba(15,158,85,.14);
+}
+
+.camp--casella { display: flex; align-items: flex-start; gap: 10px; }
+
+.camp--casella label {
+  text-transform: none;
+  letter-spacing: 0;
+  font-weight: 400;
+  font-size: .95rem;
+  color: var(--tinta);
+  margin: 0;
+}
+
+.camp--casella input {
+  width: 18px;
+  height: 18px;
+  margin: 2px 0 0;
+  accent-color: var(--verd);
+  flex: 0 0 auto;
+}
+
+.hp { position: absolute; left: -9999px; }
+
+.formulari__peu {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  flex-wrap: wrap;
+  margin: 4px 0 0;
+}
+
+.boto {
+  font: inherit;
+  font-weight: 600;
+  background: var(--verd);
+  color: #fff;
+  border: 0;
+  border-radius: 3px;
+  padding: 14px 24px;
+  cursor: pointer;
+  transition: background 160ms ease, transform 100ms ease;
+}
+
+.boto:hover { background: var(--verd-fosc); }
+.boto:active { transform: translateY(1px); }
+.boto:focus-visible { outline: 3px solid rgba(15,158,85,.35); outline-offset: 2px; }
+
+.formulari__nota { font-size: .92rem; color: var(--gris); }
+.formulari__nota--ok { color: var(--verd-fosc); font-weight: 600; }
