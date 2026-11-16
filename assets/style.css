@@ -667,7 +667,7 @@ a { color: inherit; }
 .quadricula {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
-  gap: 26px;
+  gap: 20px;
   margin-top: 2.2rem;
 }
 
@@ -776,8 +776,3 @@ a { color: inherit; }
   .quadricula { grid-template-columns: 1fr; gap: 18px; }
 }
 
-/* La pàgina de notícies respira més que la columna de lectura */
-.pagina--ample { max-width: 66rem; }
-
-.pagina--ample .prosa,
-.pagina--ample .pagina__titol { max-width: 40rem; }
