@@ -1,0 +1,383 @@
+/* ==========================================================================
+   Subirats, endavant! — full de ruta visual
+   Verd de marca: #0F9E55 (mostrejat de la imatge original)
+   ========================================================================== */
+
+:root {
+  --verd: #0F9E55;
+  --verd-fosc: #0b7c43;
+  --blanc: #ffffff;
+  --tinta: #10231A;
+  --gris: #6b7a72;
+  --marge: clamp(20px, 5vw, 40px);
+  --sans: ui-sans-serif, -apple-system, "Helvetica Neue", Helvetica, Arial, sans-serif;
+  --serif: "Iowan Old Style", "Palatino Linotype", Palatino, Georgia, "Times New Roman", serif;
+}
+
+*,
+*::before,
+*::after { box-sizing: border-box; }
+
+html {
+  scroll-behavior: smooth;
+  scroll-padding-top: 0;
+  -webkit-text-size-adjust: 100%;
+}
+
+body {
+  margin: 0;
+  background: var(--blanc);
+  color: var(--tinta);
+  font-family: var(--sans);
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+}
+
+img, svg { display: block; max-width: 100%; }
+
+a { color: inherit; }
+
+.sr-only {
+  position: absolute;
+  width: 1px; height: 1px;
+  margin: -1px; padding: 0;
+  overflow: hidden;
+  clip: rect(0 0 0 0);
+  white-space: nowrap;
+  border: 0;
+}
+
+.ocult {
+  position: absolute !important;
+  left: -9999px !important;
+  opacity: 0;
+  height: 0;
+  width: 0;
+}
+
+/* ---------------------------------------------------------------- HERO --- */
+
+.hero {
+  min-height: 100vh;
+  min-height: 100svh;
+  background: var(--verd);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: clamp(32px, 6vh, 64px) var(--marge);
+  position: relative;
+  overflow: hidden;
+}
+
+.hero__inner {
+  width: 100%;
+  max-width: 620px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+}
+
+.hero__logo {
+  margin: 0;
+  line-height: 0;
+  animation: entra 700ms cubic-bezier(.22,.7,.3,1) both;
+}
+
+.hero__logo img {
+  width: min(560px, 84vw);
+  max-width: 100%;
+  height: auto;
+  margin: 0 auto;
+}
+
+/* ------------------------------------------------------------ FORMULARI --- */
+
+.subscriu {
+  width: min(520px, 100%);
+  margin: clamp(26px, 5.5vh, 50px) 0 0;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  background: var(--blanc);
+  border-radius: 3px;
+  padding: 4px 6px 4px 18px;
+  min-height: 56px;
+  box-shadow: 0 1px 0 rgba(0,0,0,.06);
+  transition: box-shadow 200ms ease, transform 200ms ease;
+  animation: entra 700ms 90ms cubic-bezier(.22,.7,.3,1) both;
+}
+
+.subscriu:focus-within {
+  box-shadow: 0 0 0 3px rgba(255,255,255,.45), 0 6px 24px rgba(0,0,0,.10);
+}
+
+.subscriu__input {
+  flex: 1 1 auto;
+  min-width: 0;
+  border: 0;
+  background: transparent;
+  font: inherit;
+  font-size: 16px;
+  color: var(--tinta);
+  padding: 12px 0;
+  appearance: none;
+}
+
+.subscriu__input::placeholder {
+  color: #8a968f;
+  opacity: 1;
+}
+
+.subscriu__input:focus { outline: none; }
+
+.subscriu__boto {
+  flex: 0 0 auto;
+  width: 46px;
+  height: 46px;
+  display: grid;
+  place-items: center;
+  border: 0;
+  border-radius: 2px;
+  background: transparent;
+  color: var(--verd);
+  cursor: pointer;
+  transition: background 160ms ease, transform 160ms ease;
+}
+
+.subscriu__boto svg { width: 22px; height: 22px; }
+
+.subscriu__boto:hover {
+  background: rgba(15,158,85,.10);
+}
+
+.subscriu__boto:active { transform: translateX(2px); }
+
+.subscriu__boto:focus-visible {
+  outline: 2px solid var(--verd);
+  outline-offset: 2px;
+}
+
+.subscriu__nota {
+  margin: 14px 0 0;
+  color: rgba(255,255,255,.88);
+  font-size: .92rem;
+  line-height: 1.5;
+  max-width: 34ch;
+}
+
+.subscriu__legal {
+  margin: 6px 0 0;
+  color: rgba(255,255,255,.62);
+  font-size: .76rem;
+  line-height: 1.5;
+}
+
+.subscriu__legal a {
+  color: inherit;
+  text-decoration: underline;
+  text-underline-offset: 2px;
+}
+
+.subscriu__missatge {
+  margin: 14px 0 0;
+  font-size: .95rem;
+  color: #fff;
+  background: rgba(0,0,0,.18);
+  padding: 10px 14px;
+  border-radius: 3px;
+}
+
+.subscriu__missatge[hidden] { display: none; }
+
+/* -------------------------------------------------------------- XARXES --- */
+
+.xarxes {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: clamp(22px, 5vw, 44px);
+  margin-top: clamp(26px, 5vh, 46px);
+  animation: entra 700ms 180ms cubic-bezier(.22,.7,.3,1) both;
+}
+
+.xarxa {
+  display: grid;
+  place-items: center;
+  color: #000;
+  background: none;
+  border-radius: 0;
+  padding: 4px;
+  text-decoration: none;
+  transition: transform 180ms cubic-bezier(.22,.7,.3,1), opacity 180ms ease;
+}
+
+.xarxa svg {
+  width: clamp(30px, 4.2vw, 38px);
+  height: auto;
+}
+
+.xarxa:hover {
+  transform: translateY(-4px);
+  opacity: .78;
+}
+
+.xarxa:focus-visible {
+  outline: 3px solid #fff;
+  outline-offset: 4px;
+}
+
+/* ------------------------------------------------------ FI DEL PRIMER BLOC --- */
+
+.baixa {
+  position: absolute;
+  left: 50%;
+  bottom: clamp(14px, 3vh, 28px);
+  transform: translateX(-50%);
+  width: 34px;
+  height: 34px;
+  display: grid;
+  place-items: center;
+  opacity: .55;
+  transition: opacity 200ms ease;
+}
+
+.baixa:hover { opacity: 1; }
+
+.baixa span {
+  width: 10px;
+  height: 10px;
+  border-right: 2px solid #fff;
+  border-bottom: 2px solid #fff;
+  transform: rotate(45deg);
+  animation: batega 2.4s ease-in-out infinite;
+}
+
+/* ------------------------------------------------------------- MANIFEST --- */
+
+.manifest {
+  background: var(--blanc);
+  padding: clamp(56px, 10vw, 130px) var(--marge) clamp(48px, 8vw, 110px);
+}
+
+.manifest__cos {
+  max-width: 40rem;
+  margin: 0 auto;
+}
+
+.kicker {
+  margin: 0 0 clamp(14px, 2vw, 22px);
+  font-family: var(--sans);
+  font-size: .74rem;
+  font-weight: 700;
+  letter-spacing: .20em;
+  text-transform: uppercase;
+  color: var(--verd);
+}
+
+.manifest__titol {
+  margin: 0 0 clamp(24px, 4vw, 40px);
+  font-family: var(--sans);
+  font-weight: 800;
+  font-size: clamp(1.9rem, 5.4vw, 3.05rem);
+  line-height: 1.06;
+  letter-spacing: -.025em;
+  text-wrap: balance;
+}
+
+.manifest p {
+  font-family: var(--serif);
+  font-size: clamp(1.06rem, 1.6vw, 1.2rem);
+  line-height: 1.72;
+  margin: 0 0 1.15em;
+  hyphens: auto;
+}
+
+.manifest__entradeta {
+  font-size: clamp(1.18rem, 2vw, 1.4rem) !important;
+  line-height: 1.62 !important;
+  color: #163026;
+  margin-bottom: 1.4em !important;
+}
+
+.manifest__entradeta::first-letter {
+  float: left;
+  font-size: 3.05em;
+  line-height: .82;
+  padding: .06em .10em 0 0;
+  color: var(--verd);
+  font-weight: 700;
+}
+
+.manifest__clam {
+  margin-top: 2.4rem !important;
+  margin-bottom: 0 !important;
+  padding-top: 1.6rem !important;
+  border-top: 3px solid var(--verd);
+  font-family: var(--sans) !important;
+  font-weight: 700;
+  font-size: clamp(1.08rem, 2.1vw, 1.26rem) !important;
+  line-height: 1.45 !important;
+  letter-spacing: -.01em;
+  color: var(--tinta);
+  text-wrap: balance;
+}
+
+/* ------------------------------------------------------------------ PEU --- */
+
+.peu {
+  background: var(--verd);
+  padding: clamp(18px, 3vw, 26px) var(--marge);
+  text-align: center;
+  font-size: .82rem;
+  color: rgba(255,255,255,.92);
+}
+
+.peu p { margin: 0; }
+
+.peu a {
+  color: #fff;
+  text-decoration: none;
+  border-bottom: 1px solid rgba(255,255,255,.5);
+}
+
+.peu a:hover { border-color: #fff; }
+
+/* --------------------------------------------------------------- MOTIUS --- */
+
+@keyframes entra {
+  from { opacity: 0; transform: translateY(14px); }
+  to   { opacity: 1; transform: none; }
+}
+
+@keyframes batega {
+  0%, 100% { transform: rotate(45deg) translate(0, 0); }
+  50%      { transform: rotate(45deg) translate(3px, 3px); }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+  *, *::before, *::after {
+    animation-duration: .001ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: .001ms !important;
+  }
+}
+
+/* ------------------------------------------------------------- MÒBIL --- */
+
+@media (max-width: 480px) {
+  .subscriu { min-height: 52px; padding-left: 14px; }
+  .subscriu__boto { width: 42px; height: 42px; }
+  .subscriu__nota { font-size: .86rem; }
+}
+
+/* Pantalles baixes: que el primer bloc continuï cabent sencer */
+@media (max-height: 620px) {
+  .hero { min-height: 100svh; padding-top: 28px; padding-bottom: 44px; }
+  .hero__logo img { width: min(400px, 70vw); }
+  .subscriu { margin-top: 20px; }
+  .xarxes { margin-top: 20px; }
+  .baixa { display: none; }
+}
