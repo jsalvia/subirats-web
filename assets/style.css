@@ -1146,31 +1146,32 @@ a { color: inherit; }
 
 /* ------------------------------------------------------- TORNA A DALT --- */
 .amunt {
-  margin: clamp(72px, 11vw, 120px) 0 clamp(10px, 2vw, 18px);
+  margin: clamp(38px, 5.5vw, 60px) 0 clamp(6px, 1.5vw, 12px);
   display: flex;
   justify-content: center;
 }
 
 .amunt__boto {
-  width: 42px;
-  height: 42px;
+  width: 40px;
+  height: 40px;
   display: grid;
   place-items: center;
-  border: 1px solid rgba(16, 35, 26, .16);
+  border: 1px solid rgba(15, 158, 85, .32);
   border-radius: 50%;
-  color: #7f8d86;
+  color: var(--verd);
+  background: rgba(15, 158, 85, .05);
   text-decoration: none;
-  transition: color 180ms ease, border-color 180ms ease, transform 180ms ease, background 180ms ease;
+  transition: color 170ms ease, border-color 170ms ease, transform 170ms ease, background 170ms ease;
 }
 
 .amunt__boto:hover {
-  color: var(--verd);
+  color: #fff;
+  background: var(--verd);
   border-color: var(--verd);
-  background: rgba(15, 158, 85, .07);
   transform: translateY(-2px);
 }
 
 .amunt__boto:focus-visible {
-  outline: 2px solid rgba(15, 158, 85, .45);
+  outline: 2px solid rgba(15, 158, 85, .5);
   outline-offset: 3px;
 }
