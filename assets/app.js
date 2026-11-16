@@ -31,14 +31,21 @@
         return;
       }
 
-      // Mentre el formulari no estigui connectat a Brevo, no s'envia res.
-      if (form.getAttribute("action").indexOf("REEMPLA\u00c7A-HO") !== -1) {
-        e.preventDefault();
-        avisa("Gràcies! El formulari encara s'ha de connectar a Brevo — aviat estarà actiu.");
-        return;
-      }
+      // Envia a Brevo sense sortir de la pàgina (mode no-cors: la resposta no es llegeix).
+      var dades = new URLSearchParams(new FormData(form)).toString();
+      avisa("Enviant…");
 
-      /* Si tot va bé, s'envia de manera nativa cap a Brevo. */
+      fetch(form.action, {
+        method: "POST",
+        mode: "no-cors",
+        headers: { "Content-Type": "application/x-www-form-urlencoded" },
+        body: dades
+      }).then(function () {
+        form.reset();
+        avisa("Gràcies! Ja ets a la llista. T'escriurem poc i només quan valgui la pena.");
+      }).catch(function () {
+        form.submit(); // si el navegador no ho permet, enviament clàssic
+      });
     });
   }
 
