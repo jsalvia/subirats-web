@@ -1188,12 +1188,10 @@ a { color: inherit; }
 /* ------------------------------------------------ ICONES DE CONTACTE --- */
 .contacte-icons {
   display: flex;
-  justify-content: center;
+  justify-content: flex-start;
   align-items: center;
-  gap: clamp(24px, 5vw, 36px);
-  margin: clamp(30px, 5vw, 46px) 0 0;
-  padding-top: clamp(22px, 3.5vw, 30px);
-  border-top: 1px solid #e3ebe6;
+  gap: clamp(22px, 4.5vw, 34px);
+  margin: clamp(26px, 4vw, 38px) 0 0;
 }
 
 .xarxa-contacte {
@@ -1206,7 +1204,7 @@ a { color: inherit; }
 }
 
 .xarxa-contacte svg {
-  width: clamp(26px, 3.2vw, 32px);
+  width: clamp(28px, 3.6vw, 34px);
   height: auto;
 }
 
