@@ -802,3 +802,17 @@ a { color: inherit; }
   font-size: .84rem;
   color: var(--gris);
 }
+
+.targeta__logo {
+  aspect-ratio: 16 / 10;
+  background: var(--verd);
+  display: grid;
+  place-items: center;
+  padding: 9% 11%;
+}
+
+.targeta__logo img {
+  width: 100%;
+  max-width: 260px;
+  height: auto;
+}
