@@ -5,6 +5,7 @@
 
 :root {
   --verd: #0F9E55;
+  --verd-text: #0b7c43;
   --verd-fosc: #0b7c43;
   --blanc: #ffffff;
   --tinta: #10231A;
@@ -273,7 +274,7 @@ a { color: inherit; }
   font-weight: 700;
   letter-spacing: .20em;
   text-transform: uppercase;
-  color: var(--verd);
+  color: var(--verd-text);
 }
 
 .manifest__titol {
@@ -459,7 +460,7 @@ a { color: inherit; }
   color: var(--gris);
 }
 
-.pagina__peu a { color: var(--verd); }
+.pagina__peu a { color: var(--verd-text); }
 
 .fitxa {
   margin: clamp(28px, 4vw, 44px) 0 0;
@@ -478,52 +479,6 @@ a { color: inherit; }
   margin: 0;
   font-family: var(--serif);
   line-height: 1.65;
-}
-
-.contacte {
-  display: grid;
-  gap: 14px;
-  margin: clamp(24px, 4vw, 36px) 0 0;
-}
-
-.contacte__bloc {
-  border: 1px solid #e3ebe6;
-  border-radius: 4px;
-  padding: 18px 20px;
-  transition: border-color 180ms ease;
-}
-
-.contacte__bloc:hover { border-color: #bcdccb; }
-
-.contacte__etiqueta {
-  margin: 0;
-  font-size: .72rem;
-  letter-spacing: .16em;
-  text-transform: uppercase;
-  color: var(--verd);
-  font-weight: 700;
-}
-
-.contacte__dada {
-  margin: 6px 0 0;
-  font-size: 1.05rem;
-  font-weight: 600;
-}
-
-.contacte__dada a {
-  color: var(--tinta);
-  text-decoration: none;
-  border-bottom: 1px solid #cfe3d7;
-}
-
-.contacte__dada a:hover { color: var(--verd); border-color: var(--verd); }
-
-.contacte__dada--pendent { color: var(--gris); font-weight: 500; }
-
-.contacte__nota {
-  margin: 6px 0 0;
-  font-size: .85rem;
-  color: var(--gris);
 }
 
 .buit {
@@ -851,7 +806,7 @@ a { color: inherit; }
   font-size: .72rem;
   letter-spacing: .16em;
   text-transform: uppercase;
-  color: var(--verd);
+  color: var(--verd-text);
   font-weight: 700;
   margin-bottom: 6px;
 }
@@ -937,48 +892,9 @@ a { color: inherit; }
 .formulari__nota { font-size: .92rem; color: var(--gris); }
 .formulari__nota--ok { color: var(--verd-fosc); font-weight: 600; }
 
-/* -------- canals de contacte amb icona (formulari a dalt) ---------------- */
-.contacte { grid-template-columns: 1fr; }
-
 @media (min-width: 620px) {
   .contacte { grid-template-columns: 1fr 1fr; }
 }
-
-.contacte__separa {
-  margin: clamp(30px, 4.5vw, 44px) 0 0;
-  font-size: .72rem;
-  letter-spacing: .16em;
-  text-transform: uppercase;
-  color: var(--gris);
-  font-weight: 700;
-}
-
-.contacte__bloc {
-  display: flex;
-  align-items: flex-start;
-  gap: 12px;
-  text-decoration: none;
-  color: inherit;
-}
-
-.contacte__icon {
-  width: 22px;
-  height: 22px;
-  flex: 0 0 auto;
-  color: var(--verd);
-  margin-top: 1px;
-}
-
-.contacte__text { display: block; }
-
-.contacte__etiqueta,
-.contacte__dada,
-.contacte__nota { display: block; }
-
-.contacte__dada { margin: 4px 0 0; }
-.contacte__nota { margin: 3px 0 0; font-size: .9rem; }
-
-.contacte__bloc:hover .contacte__dada { color: var(--verd); }
 
 .camp__req {
   color: #c0563f;
@@ -1069,7 +985,7 @@ a { color: inherit; }
   display: inline-block;
   font-size: .82rem;
   font-weight: 600;
-  color: var(--verd);
+  color: var(--verd-text);
   text-decoration: none;
   border-bottom: 1px solid #cfe3d7;
 }
@@ -1167,7 +1083,7 @@ a { color: inherit; }
   place-items: center;
   border: 1px solid rgba(15, 158, 85, .32);
   border-radius: 50%;
-  color: var(--verd);
+  color: var(--verd-text);
   background: rgba(15, 158, 85, .05);
   text-decoration: none;
   transition: color 170ms ease, border-color 170ms ease, transform 170ms ease, background 170ms ease;
@@ -1198,7 +1114,7 @@ a { color: inherit; }
   display: grid;
   place-items: center;
   padding: 6px;
-  color: var(--verd);
+  color: var(--verd-text);
   text-decoration: none;
   transition: transform 180ms ease, opacity 180ms ease;
 }
