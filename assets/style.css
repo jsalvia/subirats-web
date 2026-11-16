@@ -230,6 +230,30 @@ a { color: inherit; }
 
 /* ------------------------------------------------------ FI DEL PRIMER BLOC --- */
 
+.baixa {
+  position: absolute;
+  left: 50%;
+  bottom: clamp(14px, 3vh, 28px);
+  transform: translateX(-50%);
+  width: 34px;
+  height: 34px;
+  display: grid;
+  place-items: center;
+  opacity: .55;
+  transition: opacity 200ms ease;
+}
+
+.baixa:hover { opacity: 1; }
+
+.baixa span {
+  width: 10px;
+  height: 10px;
+  border-right: 2px solid #fff;
+  border-bottom: 2px solid #fff;
+  transform: rotate(45deg);
+  animation: batega 2.4s ease-in-out infinite;
+}
+
 /* ------------------------------------------------------------- MANIFEST --- */
 
 .manifest {
