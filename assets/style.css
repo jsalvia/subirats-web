@@ -294,22 +294,6 @@ a { color: inherit; }
   hyphens: auto;
 }
 
-.manifest__entradeta {
-  font-size: clamp(1.18rem, 2vw, 1.4rem) !important;
-  line-height: 1.62 !important;
-  color: #163026;
-  margin-bottom: 1.4em !important;
-}
-
-.manifest__entradeta::first-letter {
-  float: left;
-  font-size: 3.05em;
-  line-height: .82;
-  padding: .06em .10em 0 0;
-  color: var(--verd);
-  font-weight: 700;
-}
-
 .manifest__clam {
   margin-top: 2.4rem !important;
   margin-bottom: 0 !important;
