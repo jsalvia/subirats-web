@@ -599,3 +599,40 @@ a { color: inherit; }
 }
 
 .fitxa--acte { margin-top: clamp(30px, 4vw, 44px); }
+
+/* --------------------------------------------------------- CRONOLOGIA --- */
+
+.fites {
+  list-style: none;
+  margin: 1.4rem 0 0;
+  padding: 0;
+}
+
+.fites li {
+  display: grid;
+  grid-template-columns: 9rem 1fr;
+  gap: 1.1rem;
+  padding: .78rem 0;
+  border-top: 1px solid #e8ede9;
+}
+
+.fites li:last-child { border-bottom: 1px solid #e8ede9; }
+
+.fites__data {
+  font-size: .7rem;
+  letter-spacing: .13em;
+  text-transform: uppercase;
+  font-weight: 700;
+  color: var(--verd);
+  padding-top: .25rem;
+}
+
+.fites__fet {
+  font-family: var(--serif);
+  font-size: 1.02rem;
+  line-height: 1.55;
+}
+
+@media (max-width: 520px) {
+  .fites li { grid-template-columns: 1fr; gap: .2rem; padding: .7rem 0; }
+}
