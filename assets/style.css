@@ -1145,33 +1145,32 @@ a { color: inherit; }
 }
 
 /* ------------------------------------------------------- TORNA A DALT --- */
-.torna-dalt {
-  margin: clamp(30px, 5vw, 48px) 0 0;
-  text-align: center;
+.amunt {
+  margin: clamp(72px, 11vw, 120px) 0 clamp(10px, 2vw, 18px);
+  display: flex;
+  justify-content: center;
 }
 
-.torna-dalt__boto {
-  display: inline-flex;
-  align-items: center;
-  gap: 8px;
-  font-size: .82rem;
-  font-weight: 600;
-  letter-spacing: .06em;
-  color: var(--verd);
+.amunt__boto {
+  width: 42px;
+  height: 42px;
+  display: grid;
+  place-items: center;
+  border: 1px solid rgba(16, 35, 26, .16);
+  border-radius: 50%;
+  color: #7f8d86;
   text-decoration: none;
-  border: 1px solid #cfe3d7;
-  border-radius: 999px;
-  padding: 11px 20px;
-  transition: background 160ms ease, border-color 160ms ease, color 160ms ease;
+  transition: color 180ms ease, border-color 180ms ease, transform 180ms ease, background 180ms ease;
 }
 
-.torna-dalt__boto:hover {
-  background: var(--verd);
+.amunt__boto:hover {
+  color: var(--verd);
   border-color: var(--verd);
-  color: #fff;
+  background: rgba(15, 158, 85, .07);
+  transform: translateY(-2px);
 }
 
-.torna-dalt__boto:focus-visible {
-  outline: 3px solid rgba(15,158,85,.35);
-  outline-offset: 2px;
+.amunt__boto:focus-visible {
+  outline: 2px solid rgba(15, 158, 85, .45);
+  outline-offset: 3px;
 }
