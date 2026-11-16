@@ -755,11 +755,14 @@ a { color: inherit; }
 
 .article__lead {
   font-family: var(--serif);
-  font-size: clamp(1.14rem, 1.9vw, 1.3rem);
-  line-height: 1.6;
-  margin: 0 0 1.9rem;
-  color: #163026;
+  font-size: clamp(1.06rem, 1.6vw, 1.2rem);
+  line-height: 1.72;
+  font-weight: 700;
+  margin: 0 0 1.05em;
+  color: var(--tinta);
 }
+
+.article__lead:last-of-type { margin-bottom: 2rem; }
 
 .prosa blockquote {
   margin: 1.7rem 0;
@@ -791,11 +794,7 @@ a { color: inherit; }
 }
 
 
-.article__lead--segon {
-  font-size: clamp(1.02rem, 1.6vw, 1.14rem);
-  color: #35473d;
-  margin-top: -.7rem;
-}
+.article__lead--segon { margin-top: 0; }
 
 .article__signatura {
   margin: 2.2rem 0 0;
