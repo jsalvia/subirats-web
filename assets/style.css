@@ -428,19 +428,21 @@ a { color: inherit; }
 
 .nav a[aria-current="page"] { border-bottom-color: #fff; }
 
-/* A la portada el capçal va sobre el verd i no repeteix el logotip */
-.inici .site-cap {
-  position: absolute;
-  left: 0;
-  right: 0;
-  top: 0;
-  background: transparent;
-  z-index: 20;
+/* Menú centrat dins del verd, damunt del logotip */
+.nav--hero {
+  margin: 0 0 clamp(22px, 4.5vh, 38px);
+  gap: clamp(18px, 3.6vw, 34px);
+  justify-content: center;
 }
 
-.inici .site-cap__marca { display: none; }
+.nav--hero a {
+  font-size: .72rem;
+  letter-spacing: .18em;
+  padding: 4px 0;
+  opacity: .88;
+}
 
-.inici .hero { padding-top: clamp(86px, 12vh, 108px); }
+.nav--hero a:hover { opacity: 1; }
 
 /* ------------------------------------------------------ PÀGINES INTERNES --- */
 
