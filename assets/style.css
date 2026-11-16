@@ -650,3 +650,22 @@ a { color: inherit; }
   object-fit: cover;
   border-radius: 3px;
 }
+
+.foto--retrat {
+  max-width: 380px;
+  margin: 1.9rem auto 0;
+}
+
+.foto--retrat img {
+  aspect-ratio: 4 / 5;
+  object-fit: cover;
+  object-position: 38% 50%;
+}
+
+.foto--retrat figcaption {
+  margin-top: .55rem;
+  font-size: .78rem;
+  color: var(--gris);
+  text-align: center;
+  font-style: italic;
+}
