@@ -636,3 +636,14 @@ a { color: inherit; }
 @media (max-width: 520px) {
   .fites li { grid-template-columns: 1fr; gap: .2rem; padding: .7rem 0; }
 }
+
+/* ------------------------------------------------------------- FOTOGRAFIA --- */
+
+.foto { margin: 1.9rem 0 0; }
+
+.foto img {
+  display: block;
+  width: 100%;
+  height: auto;
+  border-radius: 3px;
+}
