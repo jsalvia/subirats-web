@@ -689,7 +689,9 @@ a { color: inherit; }
 }
 
 .targeta__img {
+  display: block;
   width: 100%;
+  height: auto;
   aspect-ratio: 16 / 10;
   object-fit: cover;
   border-radius: 0;
@@ -700,6 +702,8 @@ a { color: inherit; }
   display: flex;
   flex-direction: column;
   gap: .45rem;
+  flex: 1 1 auto;
+  min-width: 0;
 }
 
 .targeta__data {
@@ -717,6 +721,11 @@ a { color: inherit; }
   line-height: 1.32;
   font-weight: 700;
   letter-spacing: -.01em;
+  display: -webkit-box;
+  -webkit-line-clamp: 3;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+  overflow-wrap: anywhere;
 }
 
 .targeta__text {
@@ -724,6 +733,11 @@ a { color: inherit; }
   font-size: .88rem;
   line-height: 1.5;
   color: var(--gris);
+  display: -webkit-box;
+  -webkit-line-clamp: 3;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+  overflow-wrap: anywhere;
 }
 
 
