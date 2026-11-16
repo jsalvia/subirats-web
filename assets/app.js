@@ -50,7 +50,7 @@
 
       subscriuBrevo(valor).then(function () {
         form.reset();
-        avisa("Gràcies! Ja ets a la llista. T'escriurem poc i només quan valgui la pena.");
+        avisa("Gràcies! Revisa el teu correu i confirma la subscripció. Si no el veus, mira a la brossa.");
       }).catch(function () {
         form.submit(); // si el navegador no ho permet, enviament clàssic
       });
