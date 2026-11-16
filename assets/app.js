@@ -132,20 +132,31 @@
       var volButlleti = !!(butlleti && butlleti.checked);
       var nomCurt = nom.value.trim().split(" ")[0];
 
-      if (volButlleti) {
-        diu("Enviant…", false);
-        subscriuBrevo(correu.value.trim()).then(function () {
-          diu("Gràcies, " + nomCurt + ". T'hem llegit, et respondrem aviat i t'hem apuntat al butlletí.", true);
-          contacte.reset();
-        }).catch(function () {
-          diu("Gràcies, " + nomCurt + ". T'hem llegit i et respondrem aviat. Pel butlletí, torna-ho a provar.", true);
-          contacte.reset();
-        });
-        return;
-      }
+      diu("Enviant…", false);
 
-      diu("Gràcies, " + nomCurt + ". T'hem llegit i et respondrem aviat.", true);
-      contacte.reset();
+      fetch("/api/contacte", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({
+          nom: nom.value.trim(),
+          correu: correu.value.trim(),
+          nucli: (nucli && nucli.value) || "",
+          missatge: missatge.value.trim(),
+          rgpd: rgpd ? rgpd.checked : true,
+          web: trampa ? trampa.value : ""
+        })
+      }).then(function (r) {
+        if (!r.ok) { throw new Error("HTTP " + r.status); }
+        return r.json();
+      }).then(function (res) {
+        if (!res || !res.ok) { throw new Error("resposta"); }
+        if (volButlleti) { subscriuBrevo(correu.value.trim()); }
+        diu("Gràcies, " + nomCurt + ". T'hem llegit i et respondrem aviat." +
+            (volButlleti ? " També rebràs un correu per confirmar el butlletí." : ""), true);
+        contacte.reset();
+      }).catch(function () {
+        diu("No hem pogut enviar el missatge. Escriu-nos directament a info@subiratsendavant.cat.", false);
+      });
     });
   }
 
