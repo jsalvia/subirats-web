@@ -1,0 +1,15 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//Subirats, endavant!//Agenda//CA
+CALSCALE:GREGORIAN
+BEGIN:VEVENT
+UID:presentacio-2026-12-12@subiratsendavant.cat
+DTSTAMP:20261116T120000Z
+DTSTART;TZID=Europe/Madrid:20261212T120000
+DTEND;TZID=Europe/Madrid:20261212T140000
+SUMMARY:Presentació pública de la candidatura
+LOCATION:Plaça Subirats, Sant Pau d’Ordal
+DESCRIPTION:Presentem la marca, l’equip de cinc persones que encapçala la llista i els cinc eixos del programa. Acte obert a tothom.
+STATUS:CONFIRMED
+END:VEVENT
+END:VCALENDAR

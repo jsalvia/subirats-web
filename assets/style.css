@@ -1007,3 +1007,88 @@ a { color: inherit; }
 
 .camp__req { color: #b2553f; }
 .camp__opc { color: var(--gris); }
+
+/* ================================================================ AGENDA = */
+.agenda {
+  margin: clamp(26px, 4.5vw, 40px) 0 0;
+  display: grid;
+  gap: 14px;
+}
+
+.acte {
+  display: flex;
+  gap: 18px;
+  align-items: flex-start;
+  border: 1px solid #e3ebe6;
+  border-radius: 4px;
+  padding: 18px 20px;
+  transition: border-color 180ms ease;
+}
+
+.acte:hover { border-color: #bcdccb; }
+
+.acte__data {
+  flex: 0 0 auto;
+  margin: 0;
+  text-align: center;
+  min-width: 52px;
+}
+
+.acte__dia {
+  display: block;
+  font-size: 1.7rem;
+  font-weight: 700;
+  line-height: 1;
+  color: var(--verd);
+}
+
+.acte__mes {
+  display: block;
+  margin-top: 3px;
+  font-size: .72rem;
+  letter-spacing: .12em;
+  text-transform: uppercase;
+  color: var(--gris);
+}
+
+.acte__cos { flex: 1 1 auto; }
+
+.acte__titol {
+  margin: 0;
+  font-size: 1.12rem;
+  line-height: 1.3;
+}
+
+.acte__meta {
+  margin: 5px 0 0;
+  font-size: .9rem;
+  color: var(--gris);
+}
+
+.acte__text {
+  margin: 8px 0 0;
+  font-size: .97rem;
+}
+
+.acte__accions { margin: 10px 0 0; }
+
+.acte__boto {
+  display: inline-block;
+  font-size: .82rem;
+  font-weight: 600;
+  color: var(--verd);
+  text-decoration: none;
+  border-bottom: 1px solid #cfe3d7;
+}
+
+.acte__boto:hover { color: var(--verd-fosc); border-color: var(--verd-fosc); }
+
+.agenda__buit {
+  margin: clamp(24px, 4vw, 34px) 0 0;
+  color: var(--gris);
+}
+
+@media (max-width: 480px) {
+  .acte { gap: 14px; padding: 16px; }
+  .acte__dia { font-size: 1.45rem; }
+}

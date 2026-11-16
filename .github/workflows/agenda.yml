@@ -1,0 +1,39 @@
+name: Agenda
+
+on:
+  schedule:
+    - cron: "0 */6 * * *"
+  workflow_dispatch:
+  push:
+    paths:
+      - "data/agenda.ics"
+
+permissions:
+  contents: write
+
+jobs:
+  actualitza:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      - name: Genera l'agenda
+        env:
+          AGENDA_ICS_URL: ${{ secrets.AGENDA_ICS_URL }}
+        run: python3 scripts/agenda.py
+
+      - name: Publica si hi ha canvis
+        run: |
+          git config user.name "agenda-bot"
+          git config user.email "agenda@subiratsendavant.cat"
+          git add agenda.html
+          if git diff --quiet --cached; then
+            echo "Sense canvis."
+          else
+            git commit -m "Agenda: actualització automàtica"
+            git push
+          fi
