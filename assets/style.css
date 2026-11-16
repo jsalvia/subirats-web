@@ -1221,3 +1221,6 @@ a { color: inherit; }
   width: clamp(32px, 4vw, 38px);
   height: auto;
 }
+
+/* dues caselles seguides: una mica de separació entre elles */
+.camp--casella + .camp--casella { margin-top: 12px; }
