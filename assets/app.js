@@ -22,17 +22,19 @@
 
   if (form) {
     form.addEventListener("submit", function (e) {
+      e.preventDefault(); /* mai no deixem que el navegador enviï pel seu compte */
       var valor = (input && input.value || "").trim();
 
       if (!valor || !/^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/.test(valor)) {
-        e.preventDefault();
         avisa("Revisa el correu: sembla que falta alguna cosa.");
         if (input) input.focus();
         return;
       }
 
       // Envia a Brevo sense sortir de la pàgina (mode no-cors: la resposta no es llegeix).
-      var dades = new URLSearchParams(new FormData(form)).toString();
+      var dades = "EMAIL=" + encodeURIComponent(valor) +
+                  "&email_address_check=" +
+                  "&locale=es";
       avisa("Enviant…");
 
       fetch(form.action, {
