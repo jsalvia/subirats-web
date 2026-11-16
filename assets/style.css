@@ -639,7 +639,7 @@ a { color: inherit; }
 
 /* ------------------------------------------------------------- FOTOGRAFIA --- */
 
-.foto { margin: 1.9rem 0 0; }
+.foto { margin: 2rem 0 2.2rem; }
 
 .foto img {
   display: block;
@@ -655,7 +655,7 @@ a { color: inherit; }
 .foto--retrat img { object-position: 40% 42%; }
 
 .foto--retrat figcaption {
-  margin-top: .55rem;
+  margin-top: .6rem;
   font-size: .78rem;
   color: var(--gris);
   text-align: center;
