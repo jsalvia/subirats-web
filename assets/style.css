@@ -1184,3 +1184,36 @@ a { color: inherit; }
   outline: 2px solid rgba(15, 158, 85, .5);
   outline-offset: 3px;
 }
+
+/* ------------------------------------------------ ICONES DE CONTACTE --- */
+.contacte-icons {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: clamp(26px, 6vw, 44px);
+  margin: clamp(30px, 5vw, 46px) 0 0;
+  padding-top: clamp(22px, 3.5vw, 30px);
+  border-top: 1px solid #e3ebe6;
+}
+
+.xarxa-contacte {
+  display: grid;
+  place-items: center;
+  padding: 6px;
+  color: var(--verd);
+  text-decoration: none;
+  transition: transform 180ms ease, opacity 180ms ease;
+}
+
+.xarxa-contacte svg {
+  width: 28px;
+  height: 28px;
+}
+
+.xarxa-contacte:hover { transform: translateY(-3px); opacity: .72; }
+
+.xarxa-contacte:focus-visible {
+  outline: 2px solid rgba(15, 158, 85, .5);
+  outline-offset: 4px;
+  border-radius: 4px;
+}
