@@ -88,14 +88,29 @@
         notaContacte.className = "formulari__nota" + (ok ? " formulari__nota--ok" : "");
       }
 
+      function marcaError(camp) {
+        if (!camp) return;
+        camp.classList.add("camp--error");
+        camp.setAttribute("aria-invalid", "true");
+      }
+
+      function netejaErrors() {
+        contacte.querySelectorAll(".camp--error").forEach(function (c) {
+          c.classList.remove("camp--error");
+          c.removeAttribute("aria-invalid");
+        });
+      }
+
       if (trampa && trampa.value) { return; } /* bot: no diem res */
 
-      if (!nom || !nom.value.trim()) { diu("Falta el nom.", false); nom.focus(); return; }
+      netejaErrors();
+
+      if (!nom || !nom.value.trim()) { diu("Falta el nom.", false); marcaError(nom && nom.closest(".camp")); nom.focus(); return; }
       if (!correu || !/^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/.test(correu.value.trim())) {
-        diu("Revisa el correu.", false); correu.focus(); return;
+        diu("Revisa el correu.", false); marcaError(correu && correu.closest(".camp")); correu.focus(); return;
       }
-      if (nucli && !nucli.value) { diu("Digues de quin poble o nucli ets.", false); nucli.focus(); return; }
-      if (!missatge || !missatge.value.trim()) { diu("Escriu-nos el missatge.", false); missatge.focus(); return; }
+      if (nucli && !nucli.value) { diu("Digues de quin poble o nucli ets.", false); marcaError(nucli.closest(".camp")); nucli.focus(); return; }
+      if (!missatge || !missatge.value.trim()) { diu("Escriu-nos el missatge.", false); marcaError(missatge && missatge.closest(".camp")); missatge.focus(); return; }
       if (rgpd && !rgpd.checked) { diu("Cal acceptar el tractament de les dades.", false); rgpd.focus(); return; }
 
       diu("Gràcies, " + nom.value.trim().split(" ")[0] + ". T'hem llegit i et respondrem aviat.", true);

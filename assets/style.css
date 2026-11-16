@@ -980,17 +980,26 @@ a { color: inherit; }
 
 .contacte__bloc:hover .contacte__dada { color: var(--verd); }
 
-.camp__req,
-.camp__opc {
-  font-size: .62rem;
-  letter-spacing: .1em;
-  font-weight: 600;
-  text-transform: uppercase;
-  margin-left: 6px;
+.camp__req {
+  color: #c0563f;
+  font-weight: 700;
+  margin-left: 3px;
 }
 
-.camp__req { color: #b2553f; }
-.camp__opc { color: var(--gris); }
+.formulari__llegenda {
+  margin: 2px 0 0;
+  font-size: .8rem;
+  color: var(--gris);
+}
+
+.formulari__llegenda span { color: #c0563f; font-weight: 700; }
+
+.camp--error input,
+.camp--error select,
+.camp--error textarea {
+  border-color: #c0563f !important;
+  box-shadow: 0 0 0 3px rgba(192, 86, 63, .12);
+}
 
 /* ================================================================ AGENDA = */
 .agenda {

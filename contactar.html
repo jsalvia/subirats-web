@@ -7,7 +7,7 @@
 <meta name="description" content="Contacta amb Subirats, endavant!: WhatsApp, Instagram i correu.">
 <meta name="robots" content="noindex,nofollow">
 <meta name="theme-color" content="#0F9E55">
-<link rel="stylesheet" href="assets/style.css?v=28">
+<link rel="stylesheet" href="assets/style.css?v=29">
 </head>
 <body class="interior">
 
@@ -46,22 +46,22 @@
          i treure el mode de prova de app.js. -->
     <div class="formulari__fila">
       <p class="camp">
-        <label for="nom">Nom <span class="camp__req">obligatori</span></label>
+        <label for="nom">Nom <span class="camp__req" aria-hidden="true">*</span></label>
         <input type="text" id="nom" name="nom" autocomplete="name" required>
       </p>
       <p class="camp">
-        <label for="correu">Correu electrònic <span class="camp__req">obligatori</span></label>
+        <label for="correu">Correu electrònic <span class="camp__req" aria-hidden="true">*</span></label>
         <input type="email" id="correu" name="correu" autocomplete="email" required>
       </p>
     </div>
 
     <div class="formulari__fila">
       <p class="camp">
-        <label for="telefon">Telèfon <span class="camp__opc">opcional</span></label>
+        <label for="telefon">Telèfon</label>
         <input type="tel" id="telefon" name="telefon" autocomplete="tel" inputmode="tel">
       </p>
       <p class="camp">
-        <label for="nucli">Poble o nucli <span class="camp__req">obligatori</span></label>
+        <label for="nucli">Poble o nucli <span class="camp__req" aria-hidden="true">*</span></label>
         <select id="nucli" name="nucli" required>
           <option value="">Tria’n un</option>
         <option>Ca l’Avi</option>
@@ -84,12 +84,12 @@
     </div>
 
     <p class="camp">
-      <label for="assumpte">Assumpte <span class="camp__opc">opcional</span></label>
+      <label for="assumpte">Assumpte</label>
       <input type="text" id="assumpte" name="assumpte">
     </p>
 
     <p class="camp">
-      <label for="missatge">Missatge <span class="camp__req">obligatori</span></label>
+      <label for="missatge">Missatge <span class="camp__req" aria-hidden="true">*</span></label>
       <textarea id="missatge" name="missatge" rows="6" required></textarea>
     </p>
 
@@ -107,6 +107,8 @@
       <button class="boto" type="submit">Envia el missatge</button>
       <span class="formulari__nota" id="contacte-nota" role="status"></span>
     </p>
+
+    <p class="formulari__llegenda"><span aria-hidden="true">*</span> Camps obligatoris</p>
   </form>
 
   <p class="contacte__separa">O si ho prefereixes, per aquí</p>
