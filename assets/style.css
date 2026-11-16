@@ -844,3 +844,6 @@ a { color: inherit; }
   color: var(--verd);
   font-weight: 700;
 }
+
+/* Foto dins del cos que respecta la proporció original del fitxer */
+.foto--lliure img { aspect-ratio: auto; }
