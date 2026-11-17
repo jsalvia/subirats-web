@@ -280,6 +280,30 @@ a { color: inherit; }
   color: var(--verd-text);
 }
 
+/* Fil d’Ariadna visible */
+.engrunes {
+  margin: 0 0 clamp(16px, 2.4vw, 26px);
+  font-family: var(--sans);
+  font-size: .76rem;
+  line-height: 1.3;
+  color: var(--gris);
+}
+.engrunes ol {
+  display: flex;
+  align-items: center;
+  gap: .5em;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  min-width: 0;
+}
+.engrunes li { display: flex; align-items: center; gap: .5em; min-width: 0; }
+.engrunes li:last-child { flex: 1 1 auto; }
+.engrunes li + li::before { content: "›"; color: #9aa8a1; }
+.engrunes a { color: var(--gris); text-decoration: none; }
+.engrunes a:hover { color: var(--verd-text); text-decoration: underline; text-underline-offset: 2px; }
+.engrunes [aria-current="page"] { display: block; max-width: 100%; color: var(--tinta); font-weight: 600; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+
 .manifest__titol {
   margin: 0 0 clamp(24px, 4vw, 40px);
   font-family: var(--sans);
@@ -816,6 +840,34 @@ a { color: inherit; }
   font-size: .84rem;
   color: var(--gris);
 }
+
+/* Altres notícies, al peu de cada article */
+.altres {
+  margin-top: clamp(36px, 6vw, 54px);
+  padding-top: 22px;
+  border-top: 1px solid #d7e2db;
+}
+.altres__titol {
+  margin: 0 0 6px;
+  font-family: var(--sans);
+  font-size: .74rem;
+  font-weight: 700;
+  letter-spacing: .16em;
+  text-transform: uppercase;
+  color: var(--gris);
+}
+.altres__llista { margin: 0; padding: 0; list-style: none; }
+.altres__llista a {
+  display: block;
+  padding: 14px 0;
+  text-decoration: none;
+  color: inherit;
+  border-bottom: 1px solid #e6ede9;
+}
+.altres__llista li:last-child a { border-bottom: 0; }
+.altres__llista a:hover .altres__titol-noticia { color: var(--verd-text); }
+.altres__data { display: block; margin-bottom: 3px; font-size: .74rem; color: var(--gris); }
+.altres__titol-noticia { display: block; font-family: var(--serif); font-size: 1.08rem; font-weight: 600; line-height: 1.32; }
 
 .targeta__logo {
   aspect-ratio: 16 / 10;
