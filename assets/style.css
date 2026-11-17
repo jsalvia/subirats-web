@@ -36,6 +36,9 @@ body {
 
 img, svg { display: block; max-width: 100%; }
 
+/* El wrapper <picture> no ha de crear una caixa pròpia ni alterar el flux */
+picture { display: block; }
+
 a { color: inherit; }
 
 .sr-only {
