@@ -94,6 +94,7 @@
       var correu = document.getElementById("correu");
       var missatge = document.getElementById("missatge");
       var nucli = document.getElementById("nucli");
+      var assumpte = document.getElementById("assumpte");
       var rgpd = document.getElementById("rgpd");
       var trampa = document.getElementById("web");
 
@@ -125,6 +126,7 @@
         diu("Revisa el correu.", false); marcaError(correu && correu.closest(".camp")); correu.focus(); return;
       }
       if (nucli && !nucli.value) { diu("Digues de quin poble o nucli ets.", false); marcaError(nucli.closest(".camp")); nucli.focus(); return; }
+      if (!assumpte || !assumpte.value.trim()) { diu("Falta l’assumpte.", false); marcaError(assumpte && assumpte.closest(".camp")); assumpte.focus(); return; }
       if (!missatge || !missatge.value.trim()) { diu("Escriu-nos el missatge.", false); marcaError(missatge && missatge.closest(".camp")); missatge.focus(); return; }
       if (rgpd && !rgpd.checked) { diu("Cal acceptar el tractament de les dades.", false); rgpd.focus(); return; }
 
@@ -141,6 +143,7 @@
           nom: nom.value.trim(),
           correu: correu.value.trim(),
           nucli: (nucli && nucli.value) || "",
+          assumpte: assumpte.value.trim(),
           missatge: missatge.value.trim(),
           rgpd: rgpd ? rgpd.checked : true,
           web: trampa ? trampa.value : ""

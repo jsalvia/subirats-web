@@ -686,7 +686,7 @@ a { color: inherit; }
 .targeta {
   display: flex;
   flex-direction: column;
-  border: 1px solid #e3ebe6;
+  border: 1px solid #d7e2db;
   border-radius: 8px;
   overflow: hidden;
   text-decoration: none;
@@ -894,7 +894,7 @@ a { color: inherit; }
   font-size: 1rem;
   color: var(--tinta);
   background: var(--blanc);
-  border: 1px solid #e3ebe6;
+  border: 1px solid #d7e2db;
   border-radius: 4px;
   padding: 12px 14px;
   appearance: none;
@@ -1001,7 +1001,7 @@ a { color: inherit; }
   display: flex;
   gap: 18px;
   align-items: flex-start;
-  border: 1px solid #e3ebe6;
+  border: 1px solid #d7e2db;
   border-radius: 4px;
   padding: 18px 20px;
   transition: border-color 180ms ease;

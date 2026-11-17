@@ -32,6 +32,7 @@ export async function onRequestPost({ request, env }) {
   const nom = String(dades.nom || "").trim();
   const correu = String(dades.correu || "").trim();
   const nucli = String(dades.nucli || "").trim();
+  const assumpte = String(dades.assumpte || "").trim().slice(0, 150);
   const missatge = String(dades.missatge || "").trim();
   const rgpd = dades.rgpd === true || dades.rgpd === "on";
   const trampa = String(dades.web || "").trim();
@@ -42,6 +43,7 @@ export async function onRequestPost({ request, env }) {
   if (!nom || nom.length > 120) return json({ error: "Falta el nom." }, 400);
   if (!/^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/.test(correu)) return json({ error: "El correu no és vàlid." }, 400);
   if (!nucli || nucli.length > 120) return json({ error: "Falta el poble o nucli." }, 400);
+  if (!assumpte) return json({ error: "Falta l'assumpte." }, 400);
   if (!missatge || missatge.length > 5000) return json({ error: "Falta el missatge." }, 400);
   if (!rgpd) return json({ error: "Cal acceptar el tractament de les dades." }, 400);
 
@@ -52,7 +54,8 @@ export async function onRequestPost({ request, env }) {
   const cos =
     "Nom: " + nom + "\n" +
     "Correu: " + correu + "\n" +
-    "Poble o nucli: " + nucli + "\n\n" +
+    "Poble o nucli: " + nucli + "\n" +
+    "Assumpte: " + assumpte + "\n\n" +
     missatge + "\n";
 
   const resposta = await fetch("https://api.brevo.com/v3/smtp/email", {
@@ -66,13 +69,14 @@ export async function onRequestPost({ request, env }) {
       sender: REMITENT,
       to: [{ email: DESTI, name: "Subirats, endavant!" }],
       replyTo: { email: correu, name: nom },
-      subject: "Contacte web: " + nom + " (" + nucli + ")",
+      subject: "Contacte web: " + assumpte + " (" + nom + ")",
       textContent: cos,
       htmlContent:
         '<div style="font-family:-apple-system,Helvetica,Arial,sans-serif;font-size:15px;line-height:24px;color:#222;">' +
         "<p><strong>Nom:</strong> " + escapa(nom) + "<br>" +
         "<strong>Correu:</strong> " + escapa(correu) + "<br>" +
-        "<strong>Poble o nucli:</strong> " + escapa(nucli) + "</p>" +
+        "<strong>Poble o nucli:</strong> " + escapa(nucli) + "<br>" +
+        "<strong>Assumpte:</strong> " + escapa(assumpte) + "</p>" +
         '<p style="white-space:pre-wrap;">' + escapa(missatge) + "</p>" +
         '<p style="color:#777;font-size:12px;">Enviat des del formulari de subiratsendavant.cat</p>' +
         "</div>",
