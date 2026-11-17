@@ -967,6 +967,7 @@ a { color: inherit; }
 }
 @media (max-width: 520px) {
   .subscriu-nota form { flex-direction: column; }
+  .subscriu-nota input[type="email"] { flex: 0 0 auto; width: 100%; box-sizing: border-box; }
   .subscriu-nota button { width: 100%; }
 }
 
